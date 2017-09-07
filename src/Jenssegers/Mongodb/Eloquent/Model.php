@@ -72,7 +72,7 @@ abstract class Model extends BaseModel
     public function fromDateTime($value)
     {
         // If the value is already a UTCDateTime instance, we don't need to parse it.
-        if ($value instanceof UTCDateTime) {
+        if ($value instanceof UTCDateTime || is_null($value)) {
             return $value;
         }
 
